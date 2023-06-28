@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Quicksand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+            font-family: 'Quicksand', sans-serif;
+        }
+        .login-form{
+            background-color:#e6e6e6;
+            justify-content:center;
+            align-items: center;
+            display:flex;
+            width:100%;
+            height: 100vh;
+        }
+        .form{
+            width:400px;
+            height: 300px;
+            padding: 3vw;
+            background-color:black;
+            border-radius: 7px;
+        }
+        @media screen and (max-width: 400px){
+            .form{
+            width: 90vw;
+            }
+        }
+        h3{
+            color:white;
+        }
+        label{
+            color:white
+        }
+        input{
+            width: 100%;
+            height:30px;
+        }
+        button{
+            margin-top:10px;
+            width: 100%;
+            height:35px;
+        }
+        a{
+            color: white;
+            font-size: 12px;
+        }
+        a:hover{
+            color: white;
+            font-size: 12px;
+        }
+    </style>
+        <div class="login-form">
+            {% comment %} {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+                    {{  }}
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %} {% endcomment %}
+            <form action="" method="post" class="form">
+                {% csrf_token %}
+                <h3>Login</h3>
+                <label for="username">Username</label>
+                <input type="text" placeholder="Enter your username" name="uname" id="username">
+                <label for="password">Password</label>
+                <input type="password" placeholder="Password" name="pswd" id="password">
+                <button type="submit">Login</button>
+                <a href="/register">Don't have an account? Create one</a>
+            </form>
+        </div>
+</body>

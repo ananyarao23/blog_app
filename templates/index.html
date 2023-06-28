@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Quicksand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<script>
+    function showDropdown1(){
+        const item1 = document.getElementById("dropdown-content1");
+        if(item1.style.display == "none"){
+            item1.style.display = "block";
+        }
+        else {
+            item1.style.display = "none";
+        }
+        }
+    function showDropdown2(){
+        const item2 = document.getElementById("dropdown-content2");
+        if(item2.style.display == "none"){
+            item2.style.display = "block";
+        }
+        else {
+            item2.style.display = "none";
+        }
+    }
+    function login(){
+        document.getElementById("login-overlay").style.display = "flex";
+    }
+    function filter_applied(element){
+        element.style.backgroundColor = "white";
+        element.style.color = "black";
+    }
+</script>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    .container{
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .container-carousel{
+        position: relative;
+        width: 100vw;
+        height: auto;
+    }
+    
+    .topnav{
+        display: flex;
+        position: absolute;
+        width: 100vw;
+        height: 10vh;
+        opacity: 1;
+        background-color: white;
+        font-weight: bold;
+        position: sticky;
+    }
+    .nav{
+        overflow: hidden;
+        width: 80%; 
+    }
+    .nav a{
+        margin-top: 2vh;
+        float:left;
+        text-decoration: none;
+        color: black;
+        margin-left: 1vw;
+        padding: 0.5vh 1vw 0.5vh 1vw;
+        font-family: 'Quicksand', sans-serif;
+        font-size: 1.5vw;
+    }
+    @media screen and (min-width: 1000px) {
+        .nav a{
+            font-size: 16px;
+        }
+      }
+    
+    .nav a:hover{
+        text-decoration: underline;
+    }
+    .nav a:active{
+        text-decoration: underline;
+    }
+    .heading{
+       font-family: 'Cinzel', serif;
+       margin-right: 5vw;
+       font-size: 1.7vw;
+       float: right;
+    }
+    .head{
+        width: 20%;
+    }
+    .dropdown-content1{
+        display: none;
+        background-color: black;
+        border-left: 1px solid white;
+        margin-left: 10px;
+        padding-left:3px;
+    }
+    .dropdown-content1 a{
+        text-decoration: none;
+        color: white;
+    }
+    .dropdown-content2{
+        display: none;
+        background-color: black;
+        border-left: 1px solid white;
+        margin-left: 10px;
+        padding-left:3px;
+    }
+    .dropdown-content2 a{
+        text-decoration: none;
+        color: white;
+    }
+    .content{
+        margin-left: 0;
+        margin-right: 0;
+        width: 100vw;
+        display: flex;
+    }
+    .dropbtn1{
+        color:white;
+        font-size: 1.6vw;
+        font-family: 'Quicksand', sans-serif;
+        margin-top: 5px;
+    }
+    @media screen and (min-width: 1000px) {
+        .dropbtn1{
+            font-size: 16px;
+            margin-top: 5px;
+        }
+      }
+    .dropbtn2{
+        margin-top: 5px;
+        color:white;
+        font-size: 1.6vw;
+        font-family: 'Quicksand', sans-serif;
+    }
+    @media screen and (min-width: 1000px) {
+        .dropbtn2{
+            font-size: 16px;
+            margin-top: 5px;
+        }
+      }
+      .filter-categories{
+        width: 15%;
+        background-color:black;
+        color:white;
+        position: sticky;
+        padding-left: 0;
+        padding-top: 10px;
+    }
+    .articles{
+        position: relative;
+        width: 85%;
+        background:  #f2f2f2;
+        padding-left: 5vw;
+        padding-right: 10vw;
+    }
+    .article{
+        display: flex;
+        background-color: white;
+        border-radius: 5px;
+        margin: 10px 0;
+        padding: 10px;
+    }
+    .topic{
+        font-size: 2vw;
+        color: black;
+    }
+    .subtopic{
+        font-size: 1.8vw;
+        color: gray;
+    }
+    .description{
+        font-size: 1.6vw;
+        color: lightgrey;
+    }
+    .desc-img{
+        float: right;
+        margin: 5px;
+    }
+    .filter-btn{
+        padding: 5px 20px 5px 20px ;
+        width: 80%;
+        margin: 1vw;
+        margin-bottom:5px;
+        color: white;
+        background-color: black;
+        border: 2px solid ;
+        border-radius: 20px;
+        font-size: 1.4vw;
+    }
+</style>
+<body>
+   <div class="container">
+    <div class="topnav">
+        <div class="nav">
+            <a href="/">Home</a>
+            <a href="#content">Explore</a>
+            <a href="/add_blog">Contribute</a>
+            <a href="/contact">Contact</a>
+            <a href="xyz">Help</a>
+            <a href="/register">Sign up</a>
+        </div> 
+        <div class="head">
+            <h3 class="heading">App's name</h3>
+        </div>
+    </div>
+      <div class="content" id="content">
+        <div class="filter-categories">
+            <div style="border-bottom: 3px solid white; font-size: 1.5vw; padding-left: 10px;padding-bottom:15px;font-family:'Quicksand', sans-serif;">Categories</div>
+            <div class="filter-content" style="overflow:auto; max-height:100vh;">
+               <button onclick="filter_applied(this)" class="filter-btn">filter1</button>
+               <button onclick="filter_applied(this)" class="filter-btn">filter2</button>
+               <button onclick="filter_applied(this)" class="filter-btn">filter3</button>
+               <button onclick="filter_applied(this)" class="filter-btn">filter4</button>
+               <button onclick="filter_applied(this)" class="filter-btn">filter5</button>
+               <button onclick="filter_applied(this)" class="filter-btn">filter6</button>
+               <button onclick="filter_applied(this)" class="filter-btn">filter6</button>
+               <button onclick="filter_applied(this)" class="filter-btn">filter6</button>
+               <button onclick="filter_applied(this)" class="filter-btn">filter6</button>
+               <button onclick="filter_applied(this)" class="filter-btn">filter6</button>
+               <button onclick="filter_applied(this)" class="filter-btn">filter6</button>
+               <button onclick="filter_applied(this)" class="filter-btn">filter6</button>
+               <button onclick="filter_applied(this)" class="filter-btn">filter6</button>
+            </div>
+        </div>
+
+        <div class="articles">
+            <div class="box" style="overflow:auto;max-height:100vh;">
+                <div class="article">
+                    <div class="text">
+                        <h1 class="topic">Topic</h1>
+                        <h3 class="subtopic">Subtopic</h3>
+                        <h5 class="description">Description</h5>
+                    </div>
+                    <div class="image">
+                        <img src="" alt="image" class="desc-img">
+                    </div>
+                </div>
+                <div class="article">
+                    <div class="text">
+                        <h1 class="topic">Topic</h1>
+                        <h3 class="subtopic">Subtopic</h3>
+                        <h5 class="description">Description</h5>
+                    </div>
+                    <div class="image">
+                        <img src="" alt="image" class="desc-img">
+                    </div>
+                </div>
+                <div class="article">
+                    <div class="text">
+                        <h1 class="topic">Topic</h1>
+                        <h3 class="subtopic">Subtopic</h3>
+                        <h5 class="description">Description</h5>
+                    </div>
+                    <div class="image">
+                        <img src="" alt="image" class="desc-img">
+                    </div>
+                </div>
+                <div class="article">
+                    <div class="text">
+                        <h1 class="topic">Topic</h1>
+                        <h3 class="subtopic">Subtopic</h3>
+                        <h5 class="description">Description</h5>
+                    </div>
+                    <div class="image">
+                        <img src="" alt="image" class="desc-img">
+                    </div>
+                </div>
+                <div class="article">
+                    <div class="text">
+                        <h1 class="topic">Topic</h1>
+                        <h3 class="subtopic">Subtopic</h3>
+                        <h5 class="description">Description</h5>
+                    </div>
+                    <div class="image">
+                        <img src="" alt="image" class="desc-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+   </div>
+</body>
+</html>

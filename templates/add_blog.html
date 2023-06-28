@@ -1,0 +1,31 @@
+
+{% extends 'base.html' %}
+{% block body %}
+<style>
+ input{
+    border-radius:5px;
+ }
+</style>
+<div class="container">
+    <div class="add-blog">
+        <form action="/" method="post">
+            {% csrf_token %}
+            <h1>Add an Article</h1>
+            <label for="title">Title</label> <br>
+            <input type="text" name="title" id="title" >
+            <div>
+                {{ form.media }}
+                {{ form.as_p }}
+            </div>
+            
+            <div>
+                <label for="category">Category</label> <br>
+                <input type="text" name="category" id="category">
+            </div>
+            <button type="submit">Submit</button>
+            {{ error }}
+        </form>
+    </div>
+</div>
+
+{% endblock body %}

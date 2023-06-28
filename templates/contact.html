@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Quicksand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    .contact-container{
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .topnav{
+        display: flex;
+        position: sticky;
+        width: 100vw;
+        height: 10vh;
+        opacity: 1;
+        font-weight:bold;
+        background-color: white;
+        position: sticky;
+    }
+    .nav{
+        overflow: hidden;
+        width: 80%; 
+    }
+    .nav a{
+        margin-top: 2vh;
+        float:left;
+        text-decoration: none;
+        color: black;
+        margin-left: 1vw;
+        padding: 0.5vh 1vw 0.5vh 1vw;
+        font-family: 'Quicksand', sans-serif;
+        font-size: 1.5vw;
+    }
+    @media screen and (min-width: 1000px) {
+        .nav a{
+            font-size: 16px;
+        }
+      }
+    
+    .nav a:hover{
+        text-decoration: underline;
+    }
+    .nav a:active{
+        text-decoration: underline;
+    }
+    .heading{
+       font-family: 'Cinzel', serif;
+       margin-right: 5vw;
+       font-size: 1.7vw;
+       float: right;
+    }
+    .head{
+        width: 20%;
+    }
+    .contact-form{
+        justify-content: center;
+        display: flex;
+        padding: 50px 100px 100px 100px;
+        background-color: black;
+    }
+    .form{
+        color: white;
+        width: 100%;
+        font-size: 20px; 
+    }
+    input{
+       width: 100%;
+       height: 30px;
+       color:black;
+    }
+    .submit-button{
+        height: 40px;
+        width: 100px;
+        font-size: 20px;
+        color:black;
+    }
+</style>
+<body>
+    <div class="contact-container">
+        <div class="topnav">
+            <div class="nav">
+                <a href="/">Home</a>
+                <a href="xyz">Contribute</a>
+                <a href="xyz">Contact</a>
+                <a href="xyz">Help</a>
+                <a href="xyz">My Account</a>
+            </div> 
+            <div class="head">
+                <h3 class="heading">App's name</h3>
+            </div>
+        </div>
+        <div class="contact-form">
+            <form method="post" class="form" action="/">
+                {% csrf_token %}
+                <h1 style="font-size: 40px;">Contact Us</h1>
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" placeholder="Ananya"> <br> <br>
+                <label for="email">Email:</label> <br>
+                <input type="email" id="email" name="email"><br><br>
+                <label for="phone">Mobile no.</label><br>
+                <input type="text" id="phone" name="phone"> <br><br>
+                <label for="concern">Query/Concern:</label><br>
+                <input type="text" id="concern" name="concern"> <br><br>
+                <button class="submit-button" type="submit">Submit</button>
+            </form>
+        </div>
+        <div class="footer">
+            <p></p>
+        </div>
+    </div>
+</body>
+</html>
